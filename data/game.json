@@ -1,0 +1,212 @@
+{
+  "ticks_per_second": 60,
+
+  "window": {
+    "width_px": 390,
+    "height_px": 700,
+    "title": "Night Survivors"
+  },
+
+  "art": {
+    "folder": "assets"
+  },
+
+  "floor": {
+    "tile_px": 48,
+    "sprite": "floor.png",
+    "checker_color": "#000000",
+    "checker_alpha": 40
+  },
+
+  "hero": {
+    "speed_px_per_s": 120,
+    "max_hp": 100,
+    "radius_px": 12,
+    "dead_zone_px": 12,
+    "magnet_radius_px": 60,
+    "max_weapons": 3,
+    "max_item_level": 5,
+    "start_weapon": "spark_wand",
+    "sprite": "hero.png",
+    "sprite_px": 48
+  },
+
+  "xp": {
+    "first_level_xp": 5,
+    "extra_xp_per_level": 3,
+    "cards_shown": 3,
+    "heal_when_nothing_left_hp": 30
+  },
+
+  "gem": {
+    "fly_speed_px_per_s": 300,
+    "radius_px": 5,
+    "sprite_px": 24,
+    "sprites": {
+      "1": "gem_blue.png",
+      "2": "gem_pink.png"
+    }
+  },
+
+  "spark_wand": {
+    "name": "Spark Wand",
+    "short": "Spark",
+    "card_text": "shoots a spark at the nearest enemy",
+    "speed_px_per_s": 400,
+    "damage": 10,
+    "damage_plus_per_level": 3,
+    "fire_every_s": 0.8,
+    "fire_every_minus_per_level_s": 0.08,
+    "sparks": 1,
+    "extra_sparks_at_levels": [3, 5],
+    "radius_px": 5,
+    "lifetime_s": 1.2,
+    "spread_deg": 14,
+    "color": "#ffd94a"
+  },
+
+  "spin_blades": {
+    "name": "Spin Blades",
+    "short": "Blades",
+    "card_text": "blades spin around you",
+    "blades": 2,
+    "extra_blades_at_levels": [2, 4],
+    "orbit_radius_px": 60,
+    "turn_every_s": 1.5,
+    "damage": 8,
+    "damage_plus_per_level": 3,
+    "hits_every_s": 0.5,
+    "radius_px": 8,
+    "sprite": "sword.png",
+    "sprite_px": 48
+  },
+
+  "holy_ring": {
+    "name": "Holy Ring",
+    "short": "Ring",
+    "card_text": "hurts everything near you",
+    "damage": 5,
+    "damage_plus_per_level": 2,
+    "radius_px": 50,
+    "radius_plus_per_level_px": 10,
+    "hurts_every_s": 0.5,
+    "color": "#f2c7ff"
+  },
+
+  "swift_boots": {
+    "name": "Swift Boots",
+    "short": "Boots",
+    "card_text": "+10% walking speed",
+    "speed_plus_per_level": 0.10,
+    "color": "#ffb454"
+  },
+
+  "big_heart": {
+    "name": "Big Heart",
+    "short": "Heart",
+    "card_text": "+20 max HP and heal 20",
+    "max_hp_plus_per_level": 20,
+    "heal_per_level": 20,
+    "color": "#ff6b6b"
+  },
+
+  "magnet": {
+    "name": "Magnet",
+    "short": "Magnet",
+    "card_text": "+30 px gem magnet",
+    "magnet_plus_per_level_px": 30,
+    "color": "#8f7aff"
+  },
+
+  "bat": {
+    "hp": 8,
+    "speed_px_per_s": 100,
+    "damage": 5,
+    "xp": 1,
+    "radius_px": 10,
+    "sprite": "bat.png",
+    "sprite_px": 48
+  },
+
+  "slime": {
+    "hp": 30,
+    "speed_px_per_s": 55,
+    "damage": 8,
+    "xp": 2,
+    "radius_px": 12,
+    "sprite": "slime.png",
+    "sprite_px": 48
+  },
+
+  "ghost": {
+    "hp": 15,
+    "speed_px_per_s": 135,
+    "damage": 6,
+    "xp": 2,
+    "radius_px": 11,
+    "sprite": "ghost.png",
+    "sprite_px": 48
+  },
+
+  "demon": {
+    "hp": 800,
+    "speed_px_per_s": 85,
+    "damage": 20,
+    "xp": 0,
+    "boss": true,
+    "radius_px": 26,
+    "sprite": "demon.png",
+    "sprite_px": 96
+  },
+
+  "contact": {
+    "hurts_every_s": 0.5
+  },
+
+  "spawning": {
+    "every_s": 1.0,
+    "max_per_second": 8,
+    "max_alive": 120,
+    "circle_radius_px": 380,
+    "despawn_radius_px": 700,
+    "boss_back_to_circle_px": 600
+  },
+
+  "waves": [
+    { "from_s": 0, "types": ["bat"], "minimum_alive": 12 },
+    { "from_s": 15, "types": ["bat"], "minimum_alive": 20 },
+    { "from_s": 30, "types": ["bat", "slime"], "minimum_alive": 28 },
+    { "from_s": 45, "types": ["slime", "ghost"], "minimum_alive": 36 },
+    { "from_s": 60, "types": ["bat", "ghost"], "minimum_alive": 45 },
+    { "from_s": 75, "types": ["bat", "slime", "ghost"], "minimum_alive": 55 },
+    { "from_s": 90, "types": ["bat", "slime"], "minimum_alive": 55, "boss": "demon" },
+    { "from_s": 105, "types": ["bat"], "minimum_alive": 75 }
+  ],
+
+  "goal": {
+    "victory_at_s": 120
+  },
+
+  "hud": {
+    "bar_x_px": 12,
+    "bar_y_px": 12,
+    "bar_width_px": 150,
+    "hp_bar_height_px": 16,
+    "xp_bar_height_px": 10,
+    "text_size_px": 20,
+    "title_size_px": 48,
+    "line_size_px": 22,
+    "card_side_margin_px": 20,
+    "card_height_px": 112,
+    "card_gap_px": 14,
+    "hp_bar_color": "#e04a4a",
+    "hp_bar_back_color": "#3a1616",
+    "xp_bar_color": "#4a86e8",
+    "xp_bar_back_color": "#16264a",
+    "text_color": "#f2f2f2",
+    "overlay_color": "#0d1210",
+    "card_color": "#1e2a26",
+    "card_edge_color": "#5c7a70",
+    "card_edge_color_when_pointed": "#f2f2f2"
+  }
+}
